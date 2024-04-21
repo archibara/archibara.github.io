@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
+      includeAssets: ['**/*'],
       manifest: {
         'theme_color': '#f69435',
         'background_color': '#f69435',
@@ -35,10 +36,6 @@ export default defineConfig({
           }
         ]
       },
-
-      // devOptions: {
-      //   enabled: true
-      // }
     }),
     react(),
   ],
