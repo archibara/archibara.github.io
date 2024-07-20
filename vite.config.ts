@@ -1,53 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
-import { VitePWA } from 'vite-plugin-pwa'
-import { minimal2023Preset, } from '@vite-pwa/assets-generator/config'
+import tsconfigPaths from 'vite-tsconfig-paths';
+import { vitePluginPwa } from './src/integrations/pwa/vite-plugin-pwa.node';
+import { tanstackRouterVitePlugin } from './src/integrations/tanstack/tanstack-router-vite-plugin.node';
 
-// https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(() => {
   return {
     plugins: [
       react(),
-      TanStackRouterVite(),
-      VitePWA({
-        pwaAssets: {
-          preset: {
-            ...minimal2023Preset,
-            apple: {
-              ...minimal2023Preset.apple,
-              resizeOptions: {
-                background: '#00001A',
-              }
-            },
-            maskable: {
-              ...minimal2023Preset.maskable,
-              resizeOptions: {
-                background: '#00001A',
-              }
-            },
-            transparent: {
-              ...minimal2023Preset.transparent,
-              resizeOptions: {
-                background: '#00001A',
-              }
-            }
-
-          },
-          image: 'public/logo.png',
-        },
-        registerType: 'autoUpdate',
-        includeAssets: ['**/*'],
-        manifest: {
-          'theme_color': '#00001A',
-          'background_color': '#00001A',
-          'scope': '/',
-          'start_url': '/',
-        },
-        devOptions: {
-          enabled: true,
-        }
-      }),
+      tsconfigPaths(),
+      vitePluginPwa,
+      tanstackRouterVitePlugin,
     ],
   }
 })
