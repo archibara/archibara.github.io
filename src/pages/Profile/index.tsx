@@ -1,45 +1,54 @@
-const ProfileInfo = () => <div>
-  DOB: [DOB]
-  City: [City]
-  <button>show more</button>
-</div>
+import { ProfileInfo, ProfileInfoProps } from 'src/components/ProfileInfo';
+import { Statistic, StatisticProps } from 'src/components/Statistic';
+import { Gallery, GalleryProps } from 'src/components/Gallery';
+import { PostForm } from 'src/components/PostForm';
+import { Post } from 'src/components/Post';
+import { ProfileHeader, ProfileHeaderProps } from 'src/components/ProfileHeader';
 
-const Stat = () => <div>
-  Friends: [x]
-  Subscribers: [x]
-  Photos: [x]
-</div>
+type Data = {
+  galleryProps: GalleryProps;
+  profileHeaderProps: ProfileHeaderProps;
+  profileInfoProps: ProfileInfoProps;
+  statisticProps: StatisticProps;
+}
 
-const ProfilePhotos = () => <div>
-  <img/>
-  <img/>
-  <img/>
-  <img/>
-</div>
+const data: Data = {
+  galleryProps: {
+    items: new Array(20).fill(null).map((_, i) => ({
+      src: `https://cataas.com/cat?key=${i}`,
+      label: `Placeholder ${i}`,
+    }))
+  },
+  profileHeaderProps: {
+    isOnline: true,
+    name: 'John Doe',
+    status: 'Looking for a job'
+  },
+  profileInfoProps: {
+    dob: new Date(0),
+    location: {
+      city: 'Carretera Tulum',
+      coords: {
+        lat: 20.395914,
+        long: -87.312324
+      }
+    },
+  },
+  statisticProps: {
+    photos: 100,
+    followers: 1000,
+    friends: 100,
+  }
+}
 
-const NewPostForm = () => (<div>
-  what's new?<input></input>
-  <button>submit</button>
-</div>)
-
-const Post = () => (<div>
-  <div>Author</div>
-  <div>Date</div>
-  <div>Text</div>
-  <button>like</button>
-  <button>Share</button>
-  <button>Save</button>
-</div>)
 
 export const Profile = () => {
   return (<>
-    <div>[FullName]</div>
-    <div>[Status]</div>
-    <div>[Online]</div>
-    <ProfileInfo/>
-    <Stat/>
-    <ProfilePhotos/>
-    <NewPostForm/>
+    <ProfileHeader {...data.profileHeaderProps}/>
+    <ProfileInfo {...data.profileInfoProps}/>
+    <Statistic {...data.statisticProps}/>
+    <Gallery {...data.galleryProps}/>
+    <PostForm/>
     <Post/>
     <Post/>
     <Post/>
@@ -53,6 +62,5 @@ export const Profile = () => {
     <Post/>
     <Post/>
     <Post/>
-    end
   </>)
 }

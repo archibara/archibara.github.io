@@ -8,7 +8,7 @@ const render = <T extends TypographyTags>(
   ref: ForwardedRef<React.JSX.IntrinsicElements[T]>
 ) => {
   const {
-    as: Component = 'p',
+    as: Component = props.variant || 'p',
     variant,
     ...rest
   } = props;

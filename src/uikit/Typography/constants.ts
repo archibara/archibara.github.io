@@ -9,6 +9,6 @@ export const VARIANT_CLASSNAME: Record<TypographyTags, string> = {
   h6: 'text-sm font-semibold',
   p: 'text-base',
   span: 'text-base',
-  a: 'text-base font-medium text-blue-600 dark:text-blue-500 hover:underline',
+  a: 'text-base font-medium text-blue-600 dark:text-blue-500 hover:underline hover:cursor-pointer',
   div: 'text-base',
 };
