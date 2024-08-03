@@ -14,6 +14,6 @@ export const Gallery: Story = {
     items: new Array(20).fill(null).map((_, i) => ({
       src: `https://cataas.com/cat?key=${i}`,
       label: `Placeholder ${i}`,
-    }))
-  }
+    })),
+  },
 };

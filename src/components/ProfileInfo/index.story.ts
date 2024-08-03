@@ -16,8 +16,8 @@ export const ProfileInfo: Story = {
       city: 'Carretera Tulum',
       coords: {
         lat: 20.395914,
-        long: -87.312324
-      }
-    }
-  }
+        long: -87.312324,
+      },
+    },
+  },
 };

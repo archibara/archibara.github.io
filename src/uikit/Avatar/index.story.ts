@@ -11,6 +11,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Avatar: Story = {
   args: {
-    src: 'https://cataas.com/cat?width=200&height=100'
+    src: 'https://cataas.com/cat?width=200&height=100',
   },
 };

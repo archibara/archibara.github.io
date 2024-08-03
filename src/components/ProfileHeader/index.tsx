@@ -11,9 +11,14 @@ export const ProfileHeader = (props: ProfileHeaderProps) => {
     <div>
       <div className={'flex justify-between'}>
         <Typography variant={'h6'}>{props.name}</Typography>
-        <Typography className={'text-end'} variant={'span'}>{props.isOnline ? 'online' : 'offline'}</Typography>
+        <Typography
+          className={'text-end'}
+          variant={'span'}
+        >
+          {props.isOnline ? 'online' : 'offline'}
+        </Typography>
       </div>
       <Typography variant={'span'}>{props.status}</Typography>
     </div>
-  )
-}
+  );
+};

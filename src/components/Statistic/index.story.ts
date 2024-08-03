@@ -14,5 +14,5 @@ export const Statistic: Story = {
     friends: 30,
     followers: 100,
     photos: 150,
-  }
+  },
 };

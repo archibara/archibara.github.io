@@ -1,13 +1,12 @@
-import { ReactNode, StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
+import { ReactNode, StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
 
-export const initReactDom = (children: ReactNode, rootElement = document.getElementById('app')!) => {
+export const initReactDom = (
+  children: ReactNode,
+  rootElement = document.getElementById('app')!,
+) => {
   if (!rootElement.innerHTML) {
-    const root = ReactDOM.createRoot(rootElement)
-    root.render(
-      <StrictMode>
-        {children}
-      </StrictMode>,
-    )
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(<StrictMode>{children}</StrictMode>);
   }
-}
+};

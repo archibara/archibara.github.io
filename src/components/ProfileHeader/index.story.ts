@@ -14,5 +14,5 @@ export const ProfileHeader: Story = {
     name: 'John Doe',
     isOnline: true,
     status: 'Looking for a job',
-  }
+  },
 };

@@ -11,6 +11,6 @@ type Story = StoryObj<typeof meta>;
 
 export const PageTemplate: Story = {
   args: {
-    children: 'children'
-  }
+    children: 'children',
+  },
 };

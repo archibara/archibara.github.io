@@ -13,6 +13,6 @@ type Story = StoryObj<typeof meta>;
 export const Link: Story = {
   args: {
     children: 'children',
-    href: 'https://www.google.com'
-  }
+    href: 'https://www.google.com',
+  },
 };

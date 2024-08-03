@@ -8,8 +8,8 @@ const meta = {
     children: {
       control: 'text',
       description: 'children',
-    }
-  }
+    },
+  },
 } satisfies Meta<typeof Component>;
 
 export default meta;
